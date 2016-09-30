@@ -165,7 +165,7 @@ $.getJSON(url, function(data) {
   var html = '';
 
   // build table headings
-  html += '<table cellpadding=10 cellspacing=0 border=1>';
+  html += '<table cellpadding=10 cellspacing=0 border=1 class="table">';
   html += '<tr>';
   html += '<th>Name</th>';
   html += '<th>Gender</th>';
@@ -207,7 +207,7 @@ $(document)
   .ajaxStop(function() {
     loading.hide();
   });
-  
+
 </script>
 
   </body>
