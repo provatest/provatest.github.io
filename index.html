@@ -164,7 +164,7 @@
 
 
 <script type="text/javascript">
-  
+
 // ID of the Google Spreadsheet
  var spreadsheetID = "1ZZbancDuEW3N2cKgWjhn6HIvwb4_LXR-bKH_R8fXWkY";
  
@@ -174,6 +174,7 @@
 
  var url3 = "https://spreadsheets.google.com/feeds/list/1C2tp5rcxZLpg1tNOjzWzeVWNkWSkWx2uxv9fGMhAmTY/od6/public/values?alt=json";
 
+       function loadChirp(){
 
 // make JSON call to Google Data API
 $.getJSON(url3, function(data) {
@@ -196,9 +197,12 @@ $.getJSON(url3, function(data) {
   var entry = data.feed.entry;
   /**
   ** Change to descending order
-  ** for (var i = entry.length - 1; i >= 0; i -= 1) {
+for (var i = entry.length - 1; i >= 0; i -= 1) {
    */
-  for (var i = 0; i < entry.length; i++) {
+  // for (var i = 0; i < entry.length; i++) {
+for (var i = entry.length - 1; i >= 0; i -= 1) {
+
+
     html += '<div class="well"><div class="row">';
    html += '<div class="col-md-4">';
 
@@ -220,6 +224,18 @@ $.getJSON(url3, function(data) {
   $('.console').html(html);
 });
 
+
+         setTimeout("loadChirp()",10000);
+
+}
+
+loadChirp();  
+
+
+
+</script>
+
+<script type="text/javascript">   
 // loading animation
 var loading = $('.loading');
 loading.hide();
